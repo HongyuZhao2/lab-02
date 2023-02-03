@@ -64,7 +64,7 @@ int main(int argc, char *argv[])
         /* 6.  Why use while(1)? Based on the code below, what problems might occur if there are multiple simultaneous connections to handle?
         *
         */
-        
+  
 	char buffer[256];
         newsockfd = accept(sockfd, 
                     (struct sockaddr *) &cli_addr, 
@@ -80,7 +80,7 @@ int main(int argc, char *argv[])
 	n = read(newsockfd,buffer,255);
         if (n < 0) 
             error("ERROR reading from socket");
-        //printf("Here is the message: %s\n",buffer);
+        printf("Here is the message: %s\n",buffer);
         n = write(newsockfd,"I got your message",18);
         if (n < 0) 
             error("ERROR writing to socket");
